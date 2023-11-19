@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ErrorPage from '../pages/ErrorPage';
 import ShopPage from '../pages/ShopPage';
 import Item from '../pages/Item';
+import Product from '../pages/Product';
 
 export default function NavRouter() {
   // Here go the routes
@@ -18,8 +19,8 @@ export default function NavRouter() {
       element: <ShopPage />,
     },
     {
-      path: 'shop/:itemId',
-      element: <ShopPage />,
+      path: 'product/:itemId',
+      element: <Product />,
       children: [{ index: true, element: <Item /> }],
     },
   ]);

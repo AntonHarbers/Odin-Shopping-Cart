@@ -1,10 +1,10 @@
-import { Outlet } from 'react-router-dom';
-import Navbar from '../components/Navbar';
+import React from 'react';
+import { json, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Loading from '../components/Loading';
-import ShopPageItem from '../components/ShopPageItem';
 
-export default function ShopPage() {
+export default function Product() {
+  const { itemId } = useParams();
   const [productData, setProductData] = useState(null);
 
   // fetch product data here
@@ -13,21 +13,23 @@ export default function ShopPage() {
       .then((res) => res.json())
       .then((json) => {
         setProductData(json);
-        console.log(json);
       });
   }, []);
 
   return (
     <div>
-      <Navbar />
+      <div>Hello {itemId}</div>
       {productData != null ? (
-        productData.map((product) => {
-          return <ShopPageItem key={product.id} product={product} />;
-        })
+        itemId < productData.length ? (
+          // render item info heress
+          <div>{productData[itemId].title}</div>
+        ) : (
+          <div>Incorrect Item ID</div>
+        )
       ) : (
         <Loading />
-      )}{' '}
-      <Outlet />
+      )}
+      <div></div>
     </div>
   );
 }

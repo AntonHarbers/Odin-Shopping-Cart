@@ -4,7 +4,7 @@ export default function Navbar() {
   const routes = [
     { name: 'Home', route: '/' },
     { name: 'Shop', route: '/shop' },
-    { name: 'Item', route: '/shop/item' },
+    { name: 'Item', route: '/product/12' },
   ];
 
   return (
