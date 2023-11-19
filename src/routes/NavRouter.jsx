@@ -5,6 +5,7 @@ import ErrorPage from '../pages/ErrorPage';
 import ShopPage from '../pages/ShopPage';
 import Item from '../pages/Item';
 import Product from '../pages/Product';
+import Cart from '../pages/Cart';
 
 export default function NavRouter() {
   const [productData, setProductData] = useState(null);
@@ -25,6 +26,10 @@ export default function NavRouter() {
       path: '/',
       element: <App productData={productData} />,
       errorElement: <ErrorPage />,
+    },
+    {
+      path: '/cart',
+      element: <Cart productData={productData} />,
     },
     {
       path: 'shop',
