@@ -1,28 +1,35 @@
 import React from 'react';
-import { json, useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Loading from '../components/Loading';
+import Navbar from '../components/Navbar';
 
-export default function Product() {
+export default function Product({ productData }) {
   const { itemId } = useParams();
-  const [productData, setProductData] = useState(null);
-
-  // fetch product data here
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products/')
-      .then((res) => res.json())
-      .then((json) => {
-        setProductData(json);
-      });
-  }, []);
 
   return (
     <div>
+      <Navbar />
       <div>Hello {itemId}</div>
       {productData != null ? (
         itemId < productData.length ? (
           // render item info heress
-          <div>{productData[itemId].title}</div>
+          <div>
+            <div className="w-auto justify-center text-center">
+              {productData[itemId].title}
+            </div>
+            <img
+              className="justify-center"
+              src={productData[itemId].image}
+              alt={productData[itemId].title}
+            />
+            <div className="w-auto text-center">
+              {productData[itemId].price} $
+            </div>
+            <div className="w-auto text-sm text-center">
+              {productData[itemId].rating.rate} / 5 |{' '}
+              {productData[itemId].rating.count} reviews
+            </div>
+          </div>
         ) : (
           <div>Incorrect Item ID</div>
         )
