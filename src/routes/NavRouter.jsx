@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import App from '../pages/App';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ErrorPage from '../pages/ErrorPage';
@@ -9,6 +9,7 @@ import Cart from '../pages/Cart';
 
 export default function NavRouter() {
   const [productData, setProductData] = useState(null);
+  const [cart, setCart] = useState([]);
 
   // fetch product data here
   useEffect(() => {
@@ -16,28 +17,50 @@ export default function NavRouter() {
       .then((res) => res.json())
       .then((json) => {
         setProductData(json);
-        console.log(json);
       });
   }, []);
+
+  const addToCart = (amount, price, productId) => {
+    // if item is already in the cart update the amount otherwise add it to the cart as new item
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i].id == productId) {
+        cart[i].amount = parseInt(amount) + parseInt(cart[i].amount);
+        setCart([...cart]);
+        return;
+      }
+    }
+
+    const item = {
+      id: productId,
+      amount: amount,
+      price: price,
+    };
+
+    setCart([...cart, item]);
+  };
 
   // Here go the routes
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <App productData={productData} />,
+      element: <App productData={productData} cart={cart} />,
       errorElement: <ErrorPage />,
     },
     {
       path: '/cart',
-      element: <Cart productData={productData} />,
+      element: <Cart productData={productData} cart={cart} />,
     },
     {
       path: 'shop',
-      element: <ShopPage productData={productData} />,
+      element: (
+        <ShopPage productData={productData} addToCart={addToCart} cart={cart} />
+      ),
     },
     {
       path: 'product/:itemId',
-      element: <Product productData={productData} />,
+      element: (
+        <Product productData={productData} addToCart={addToCart} cart={cart} />
+      ),
       children: [{ index: true, element: <Item /> }],
     },
   ]);

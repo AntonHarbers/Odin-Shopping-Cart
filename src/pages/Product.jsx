@@ -1,14 +1,14 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import { useParams } from 'react-router-dom';
 import Loading from '../components/Loading';
 import Navbar from '../components/Navbar';
 
-export default function Product({ productData }) {
+export default function Product({ productData, cart }) {
   const { itemId } = useParams();
 
   return (
     <div>
-      <Navbar />
+      <Navbar cart={cart} />
       <div>Hello {itemId}</div>
       {productData != null ? (
         itemId < productData.length ? (
