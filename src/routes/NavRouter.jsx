@@ -10,6 +10,9 @@ import Cart from '../pages/Cart';
 export default function NavRouter() {
   const [productData, setProductData] = useState(null);
   const [cart, setCart] = useState([]);
+  const [categoryFilter, setCategoryFilter] = useState('none');
+  const [maxPriceFilter, setMaxPriceFilter] = useState(1000);
+  const [minReviewFilter, setMinReviewFilter] = useState(0);
 
   // fetch product data here
   useEffect(() => {
@@ -53,7 +56,17 @@ export default function NavRouter() {
     {
       path: 'shop',
       element: (
-        <ShopPage productData={productData} addToCart={addToCart} cart={cart} />
+        <ShopPage
+          productData={productData}
+          addToCart={addToCart}
+          cart={cart}
+          categoryFilter={categoryFilter}
+          setCategoryFilter={setCategoryFilter}
+          maxPriceFilter={maxPriceFilter}
+          setMaxPriceFilter={setMaxPriceFilter}
+          minReviewFilter={minReviewFilter}
+          setMinReviewFilter={setMinReviewFilter}
+        />
       ),
     },
     {
