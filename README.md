@@ -71,11 +71,9 @@ Todos:
 ```
 Today:
   Add some filler to the home page
-  Individual Product Pages
+    Style things better
+    Home and Shop icons in navbar
 Tmrw:
-  Style things better
-  Home and Shop icons in navbar
-Thursday:
   Testing
 
 ```
