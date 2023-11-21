@@ -1,25 +1,8 @@
-import { useState } from 'react';
-
 /* eslint-disable react/prop-types */
-export default function Notification({ message, duration, type }) {
-  const [hidden, setHidden] = useState(false);
-
-  // timer to hide the notification
-  setTimeout(() => {
-    setHidden(true);
-  }, duration);
-
-  if (!hidden) {
-    return (
-      <div
-        className={`${
-          type == 'normal' ? 'text-green-300' : 'text-red-300'
-        } absolute right-0 top-5 bg-slate-500 p-2 rounded-md transition-all`}
-      >
-        {message}
-      </div>
-    );
-  } else {
-    return null;
-  }
+export default function Notification({ notification }) {
+  return (
+    <div className="absolute top-5 left-5 flex flex-col gap-1 bg-green-200 p-5 rounded-md">
+      <h2>{notification}</h2>
+    </div>
+  );
 }

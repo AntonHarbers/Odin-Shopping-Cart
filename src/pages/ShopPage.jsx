@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Loading from '../components/Loading';
 import ShopPageItem from '../components/ShopPageItem';
 import Filter from '../components/Filter';
+import Notification from '../components/Notification';
 
 export default function ShopPage({
   productData,
@@ -15,9 +16,13 @@ export default function ShopPage({
   setMaxPriceFilter,
   minReviewFilter,
   setMinReviewFilter,
+  notificationTimer,
+  notification,
 }) {
   return (
     <div className=" bg-slate-300 overflow-y-hidden">
+      {notificationTimer > 0 && <Notification notification={notification} />}
+
       <Navbar cart={cart} />
       <div className="flex">
         <Filter

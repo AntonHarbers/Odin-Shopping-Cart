@@ -8,17 +8,17 @@ export default function Navbar({ cart }) {
     { name: 'Shop', route: '/shop' },
   ];
 
-  console.log(cart);
-
   const location = useLocation();
   return (
-    <nav className="flex border w-full h-[10vh] bg-slate-200 border-cyan-100 items-center text-center gap-6 justify-center ">
+    <nav className="flex border w-full h-[10vh] bg-slate-200 items-center text-center gap-6 justify-center">
       {routes.map((route) => {
         return (
           <Link
             className={`${
-              location.pathname == route.route && ' text-slate-500'
-            } text-4xl transition-all hover:text-slate-500`}
+              location.pathname == route.route
+                ? ' text-slate-900'
+                : 'text-slate-400'
+            } text-4xl transition-all hover:text-slate-900`}
             key={route.name}
             to={route.route}
           >
@@ -26,8 +26,9 @@ export default function Navbar({ cart }) {
           </Link>
         );
       })}
+
       <Link
-        className={`relative ${cart.length > 0 && 'top-[10px]'}`}
+        className={`absolute right-10 ${cart.length > 0 && 'top-[24px]'}  `}
         to={'/Cart'}
       >
         <CartIcon />

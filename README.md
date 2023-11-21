@@ -35,7 +35,7 @@ Build individual card elements for each of your products. Display an input field
 [DONE]
 Fetch your shop items from FakeStore API or something similar.
 
-[In Progress]
+[DONE]
 Once a user has submitted their order, the amount on the cart itself should adjust accordingly.
 
 []
@@ -69,12 +69,13 @@ Cloudflare Pages: As of the time of writing, unlike Netlify and Vercel, no addit
 Todos:
 
 ```
-  Finish Cart Functionality - Remove item and amount from cart
-  Checkout Functionality - show a message that payment went through and order has been placed, reset cart to empty
-  Add filters to shop page - Category, Price, Rating
+Today:
   Add some filler to the home page
+  Individual Product Pages
+Tmrw:
   Style things better
   Home and Shop icons in navbar
-
+Thursday:
+  Testing
 
 ```
