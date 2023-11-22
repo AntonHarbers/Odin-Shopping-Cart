@@ -70,10 +70,8 @@ Todos:
 
 ```
 Today:
-  Add some filler to the home page
-    Style things better
-    Home and Shop icons in navbar
-Tmrw:
+About us Page
+Contact Page
   Testing
 
 ```
