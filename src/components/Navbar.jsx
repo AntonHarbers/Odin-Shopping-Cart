@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { CartIcon } from '../utils/icons';
 
 export default function Navbar({ cart }) {
@@ -10,7 +10,8 @@ export default function Navbar({ cart }) {
     { name: 'Contact', route: '/contact' },
   ];
 
-  const location = useLocation();
+  const location = window.location;
+
   return (
     <nav className="flex border w-full h-[10vh] bg-slate-200 items-center text-center gap-6 justify-center">
       {routes.map((route) => {

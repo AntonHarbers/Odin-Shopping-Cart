@@ -93,7 +93,9 @@ export default function NavRouter() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <App productData={productData} cart={cart} />,
+      element: (
+        <App productData={productData} cart={cart} location={location} />
+      ),
       errorElement: <ErrorPage />,
     },
     {
