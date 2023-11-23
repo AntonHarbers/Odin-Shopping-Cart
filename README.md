@@ -70,8 +70,6 @@ Todos:
 
 ```
 Today:
-About us Page
-Contact Page
   Testing
 
 ```

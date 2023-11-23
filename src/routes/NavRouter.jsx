@@ -6,6 +6,8 @@ import ShopPage from '../pages/ShopPage';
 import Item from '../pages/Item';
 import Product from '../pages/Product';
 import Cart from '../pages/Cart';
+import About from '../pages/About';
+import Contact from '../pages/Contact';
 
 export default function NavRouter() {
   const getCartFromStorage = () => {
@@ -137,6 +139,14 @@ export default function NavRouter() {
         />
       ),
       children: [{ index: true, element: <Item /> }],
+    },
+    {
+      path: '/about',
+      element: <About cart={cart} />,
+    },
+    {
+      path: '/contact',
+      element: <Contact cart={cart} />,
     },
   ]);
 

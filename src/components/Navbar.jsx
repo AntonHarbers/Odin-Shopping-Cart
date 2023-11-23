@@ -6,6 +6,8 @@ export default function Navbar({ cart }) {
   const routes = [
     { name: 'Home', route: '/' },
     { name: 'Shop', route: '/shop' },
+    { name: 'About', route: '/about' },
+    { name: 'Contact', route: '/contact' },
   ];
 
   const location = useLocation();
