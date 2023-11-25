@@ -13,7 +13,7 @@ export default function Filter({
     setMinReviewFilter(0);
   };
   return (
-    <div className="flex flex-col gap-5 pt-20 items-center justify-center border w-[10vw] min-w-[200px] text-center">
+    <div className="flex flex-col gap-5 pt-0 sm:pt-20 items-center justify-center border w-[10vw] min-w-[200px] text-center">
       <h1 className=" text-3xl">Filters</h1>
       {/* Category Filter */}
       <div className="flex flex-col gap-2 ">

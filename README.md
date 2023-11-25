@@ -7,7 +7,6 @@ A React shopping cart project made for the odin project.
 Todos:
 
 ```
-  Styling
   Finish Tests
 
 ```

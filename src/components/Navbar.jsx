@@ -13,7 +13,7 @@ export default function Navbar({ cart }) {
   const location = window.location;
 
   return (
-    <nav className="flex border w-full h-[10vh] bg-slate-200 items-center text-center gap-6 justify-center">
+    <nav className=" sm:flex-row flex-col flex border w-full h-[30vh] sm:h-[10vh] bg-slate-200 items-center text-center gap-6 p-10 sm:p-0 justify-center">
       {routes.map((route) => {
         return (
           <Link

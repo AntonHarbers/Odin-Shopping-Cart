@@ -28,12 +28,12 @@ export default function Contact({ cart }) {
     <div className="flex flex-col bg-slate-300">
       <Navbar cart={cart} />
       {hasSubmitted ? (
-        <div className="flex flex-col w-[600px] justify-center items-center h-[90vh] m-auto gap-10">
+        <div className="flex flex-col w-[600px] justify-center items-center h-[70vh] sm:h-[90vh] m-auto gap-10">
           <h1 className=" text-3xl">Thanks for your message!</h1>
           <h1 className="">We will get back to you as soon as possible.</h1>
         </div>
       ) : (
-        <div className="h-[90vh] flex flex-col items-center justify-center gap-[2rem]">
+        <div className=" h-[70vh] sm:h-[90vh] flex flex-col items-center justify-center gap-[2rem]">
           <h1 className=" text-4xl font-bold">Contact Us</h1>
           <div className=" w-auto flex justify-center gap-[2rem]">
             <label htmlFor="name" className="hover:cursor-pointer w-[6rem]">

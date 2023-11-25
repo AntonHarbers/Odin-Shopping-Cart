@@ -23,7 +23,7 @@ export default function Cart({
     <div>
       {notificationTimer > 0 && <Notification notification={notification} />}
       <Navbar cart={cart} />
-      <div className="display flex bg-slate-300 h-[calc(100vh-100px)] flex-col justify-start pt-10 text-center">
+      <div className="display flex bg-slate-300 h-[70vh] sm:h-[90vh] flex-col justify-start pt-10 text-center overflow-scroll pb-10">
         <h1 className=" text-6xl">Cart</h1>
 
         {cart.length == 0 ? (

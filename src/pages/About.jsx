@@ -5,7 +5,7 @@ export default function About({ cart }) {
   return (
     <div>
       <Navbar cart={cart} />
-      <div className=" bg-slate-300 h-[90vh] flex flex-col items-center justify-center gap-10">
+      <div className="display flex bg-slate-300  h-[70vh] sm:h-[90vh] flex-col justify-start items-center pt-10 text-center overflow-scroll lg:overflow-hidden pb-10">
         <h1 className="text-4xl">About Fakestore dot com</h1>
         <h2 className=" w-[80vw]">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos officiis
