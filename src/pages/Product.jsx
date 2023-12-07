@@ -53,11 +53,11 @@ export default function Product({
           <div
             className={`flex ${
               popUp && 'blur-lg'
-            } flex-col h-[90vh] gap-10 justify-center items-center transition-all duration-200`}
+            } flex-col h-[90vh] gap-10 justify-center items-center transition-all duration-200 `}
           >
-            <div className="w-auto justify-center text-center text-5xl">
+            <h1 className="w-auto max-w-[80%] justify-center text-center text-5xl">
               {productData[itemId].title}
-            </div>
+            </h1>
             <div className="flex ml-auto mr-auto gap-20">
               <img
                 className="justify-center h-80 w-auto ml-auto mr-auto shadow-custom rounded-md p-5 bg-white"

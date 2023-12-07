@@ -6,7 +6,7 @@ import ShopPageItem from '../components/ShopPageItem';
 import Filter from '../components/Filter';
 import Notification from '../components/Notification';
 import { useState } from 'react';
-import { HideIcon, ShowIcon } from '../utils/icons';
+import { HideIcon, SearchIcon, ShowIcon } from '../utils/icons';
 
 export default function ShopPage({
   productData,
@@ -22,6 +22,7 @@ export default function ShopPage({
   notification,
 }) {
   const [filtersOPen, setFilersOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
 
   const HandleToggleFilterView = (e) => {
     e.preventDefault();
@@ -56,6 +57,25 @@ export default function ShopPage({
             filtersOPen ? 'w-[90%]' : 'w-full'
           } h-[70vh] sm:h-[90vh] gap-10 pt-10 pb-10 flex-wrap ml-auto justify-center overflow-y-scroll`}
         >
+          <div className={`flex w-[90%]`}>
+            <label
+              htmlFor="searchBar"
+              className="h-10 w-10 items-center flex rounded-l-md justify-center cursor-pointer z-10"
+            >
+              <SearchIcon />
+            </label>
+            <input
+              type="text"
+              id="searchBar"
+              className=" 
+              h-10 rounded-md text-start p-2 w-full mr-10 
+              pl-[3rem] ml-[-2.5rem] active:outline-none 
+              focus:outline-none cursor-pointer text-2xl hover:border hover:border-slate-500 transition-all focus:border-slate-500 active:border-slate-500  "
+              placeholder="Search"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+            />
+          </div>
           {productData != null ? (
             productData.map((product) => {
               if (
@@ -68,6 +88,11 @@ export default function ShopPage({
                 return null;
               }
               if (product.rating.rate < minReviewFilter) {
+                return null;
+              }
+              if (
+                !product.title.toLowerCase().includes(searchValue.toLowerCase())
+              ) {
                 return null;
               }
               return (

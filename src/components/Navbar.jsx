@@ -13,7 +13,7 @@ export default function Navbar({ cart }) {
   const location = window.location;
 
   return (
-    <nav className=" sm:flex-row flex-col flex border w-full h-[30vh] sm:h-[10vh] bg-slate-200 items-center text-center gap-6 p-10 sm:p-0 justify-center">
+    <nav className=" sm:flex-row flex-col flex border w-full h-[30vh] sm:h-[10vh] bg-white shadow-2xl items-center text-center gap-6 p-10 sm:p-0 justify-center">
       {routes.map((route) => {
         return (
           <Link
@@ -36,7 +36,7 @@ export default function Navbar({ cart }) {
       >
         <CartIcon />
         {cart.length > 0 && (
-          <div className="relative top-[-3rem] right-[-2rem] text-xs text-red-500 border-2 border-red-500 rounded-xl w-5 h-5">
+          <div className="relative top-[-3rem] right-[-2rem] text-xs text-red-500 rounded-xl w-5 h-5">
             {cart.length}
           </div>
         )}
