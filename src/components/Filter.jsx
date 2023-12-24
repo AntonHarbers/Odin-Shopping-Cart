@@ -34,7 +34,6 @@ export default function Filter({
       {/* Max Price Filter */}
       <div className="flex flex-col gap-2">
         <h1>Max Price {maxPriceFilter} $</h1>
-
         <input
           type="range"
           placeholder="Max Price"

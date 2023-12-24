@@ -8,8 +8,6 @@ function App({ productData, cart }) {
     return <Loading />;
   }
 
-  console.log(productData);
-
   let randomItemNumber = [
     Math.floor(Math.random() * productData.length),
     Math.floor(Math.random() * productData.length),
@@ -52,8 +50,6 @@ function App({ productData, cart }) {
             })}
           </div>
         </div>
-        {/* Text about the store */}
-        {/* Some Images */}
       </div>
     </div>
   );
