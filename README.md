@@ -137,3 +137,5 @@ Besides unit tests, consider integrating end-to-end tests with tools like Cypres
 ## Todos
 
 The unit tests still need to be implemented before this project can be considered finalized.
+
+Merry Christmas!
