@@ -2,7 +2,7 @@
 
 A React shopping cart project made for the odin project. Implemented with the React Testng Library and the React Router API.
 
-[Live Link](https://clinquant-longma-a64892.netlify.app/cart)
+[Live Link](https://clinquant-longma-a64892.netlify.app/)
 
 ![Repo Image](src/assets/repoImage.png)
 
